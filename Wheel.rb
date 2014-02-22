@@ -10,7 +10,7 @@
  # the user won or lost. 
  #
  # Date::     02/08/2014
- # Modified by Qhorin on 2/22/2014
+ # Modified by Qhorin on 2/22/2014 to added QhorinTest branch
 
  # This class holds the constuctor for the roulette slots.
  # slotColor:: holds the value of the slot's color
