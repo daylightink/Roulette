@@ -10,7 +10,15 @@
  # the user won or lost. 
  #
  # Date::     02/08/2014
- # Modified by Qhorin on 2/22/2014
+ # Modified by Qhorin on 2/22/2014 to added QhorinTest branch
+
+ 
+ #This class is basically an enumeration of the colors
+ class Color
+  RED=1
+  BLACK=2
+  GREEN=3
+end
 
  # This class holds the constuctor for the roulette slots.
  # slotColor:: holds the value of the slot's color
@@ -75,12 +83,23 @@ class Wheel
          betValue = gets.chomp
          betValue.to_i
        end
-       puts "Enter Color of Bet:"
-       betColor = gets.chomp
+       puts "Enter Color of Bet:\n1) Red\n2) Black\n3) Green"
+       betColor = gets.chomp.to_i
+	   
+	   if(betColor == Color::RED)
+	     betColor = "red"
+		 puts "You chose Red"
+	   elsif(betColor == Color::BLACK)
+	     betColor = "black"
+		 puts "You chose Black"
+	   else
+	     betColor = "green"
+		 puts "You chose Green"
+	   end
             
        winningSlot = spinWheel()
        slotColor = winningSlot.slotColor
-       puts (winningSlot.slotColor + " " + winningSlot.slotNumber)
+       puts "Spin results: " + winningSlot.slotColor + " " + winningSlot.slotNumber
        
        if(betColor.downcase.eql? slotColor.downcase)
          puts "You win!"
